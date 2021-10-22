@@ -28,11 +28,11 @@ export const actions = {
     await commit('setEmployees', payload)
   },
   async fetchEmployees({ commit }) {
-    const res = await this.$axios.get('http://localhost:8080/employees')
+    const res = await this.$axios.get('http://localhost:8081/employees')
     await commit('setEmployees', res.data)
   },
   async fetchEmployee({ commit }, id) {
-    const res = await this.$axios.get(`http://localhost:8080/employees/${id}`)
+    const res = await this.$axios.get(`http://localhost:8081/employees/${id}`)
     await commit('setId', {
       index: res.data.id,
       id: res.data.id
